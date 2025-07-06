@@ -1,124 +1,304 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dydy Dev – Portfolio</title>
+  <!-- AOS pour les animations de scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <title>Portfolio..</title>
 </head>
-
 <body>
-  <i class="uil uil-angle-up up"></i>
-  <header>
-    <h2>Portfolio..</h2>
-    <ul>
-      <li><a href="#home" id="nav1">Accueil</a></li>
-      <li><a href="#services" id="nav2">Services</a></li>
-      <li><a href="#skills" id="nav3">Skills</a></li>
-      <li><a href="#contact" id="nav4">Contact</a></li>
-      <li>
-        <div class="switch">
-          <div class="switchcircle">
-            <ion-icon name="moon-outline"></ion-icon>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <i class="uil uil-bars menu"></i>
-  </header>
-  <section id="home">
-    <div class="left">
-      <span>Bonjour, je suis Dylan</span>
-      <h3>Développeur Web passionné</h3>
-      <span class="des">Je suis spécialisé dans la création et la conception de sites web modernes, intuitifs et performants.<br>Mon objectif est de transformer vos idées en solutions numériques efficaces et esthétiques.</span>
-      <button><a href="#skills">Découvrez mes compétences</a></button>
-    </div>
-    <div class="right">
-      <img src="portimg.svg">
-    </div>
-    <h1 class="bgtitle">Portfolio..</h1>
-    <h1 class="ya"></h1>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-    <div class="circle3"></div>
-  </section>
-  <section id="services">
-    <h1 class="title">Services</h1>
-    <div class="cards">
-      <div class="card">
-        <div class="bgcard"></div>
-        <ion-icon name="logo-html5" class="html"></ion-icon>
-        <h3>Développement Web</h3>
-        <p>À l'ère du numérique, avoir une présence en ligne est essentiel.<br>Je conçois et développe des sites web sur mesure, adaptés à vos besoins et à ceux de votre public.</p>
-      </div>
-      <div class="card">
-        <div class="bgcard"></div>
-        <ion-icon name="logo-css3" class="css"></ion-icon>
-        <h3>Conception web</h3>
-        <p>Une conception soignée est la clé d'une expérience utilisateur réussie.<br>J'utilise des technologies comme le CSS pour créer des interfaces élégantes, réactives et accessibles sur tous les appareils.</p>
-      </div>
-      <div class="card">
-        <div class="bgcard"></div>
-        <ion-icon name="logo-javascript" class="js"></ion-icon>
-        <h3>Applications Web</h3>
-        <p>Les applications web dynamiques demandent des fonctionnalités interactives. <br>Avec JavaScript, je crée des applications fluides et performantes, adaptées à vos besoins techniques.</p>
-      </div>
-    </div>
-  </section>
-  <section id="skills">
-    <h1 class="title">Skills</h1>
-    <div class="content">
-      <div class="skills">
-        <div class="skill">
-          <span class="htmlbar">HTML</span><br>
-          <div class="bar"></div>
-          <div class="activebar" id="bar1"></div>
-        </div>
-        <div class="skill">
-          <span class="cssbar">CSS</span><br>
-          <div class="bar"></div>
-          <div class="activebar" id="bar2"></div>
-        </div>
-        <div class="skill">
-          <span class="jsbar">JavaScript</span><br>
-          <div class="bar"></div>
-          <div class="activebar" id="bar3"></div>
-        </div>
-      </div>
-      <div class="para">
-        <h3>Mes compétences!!</h3>
-        <h4>HTML</h4>
-        <p>Je maîtrise parfaitement le HTML pour structurer vos contenus de manière sémantique et optimisée.</p>
-        <h4>CSS</h4>
-        <p>Mon expertise en CSS me permet de créer des designs modernes, responsives et esthétiques, tout en respectant les meilleures pratiques.</p>
-        <h4>JavaScript</h4>
-        <p>Je développe des fonctionnalités interactives et dynamiques pour vos applications web, en utilisant JavaScript de manière efficace et innovante.</p>
-      </div>
-    </div>
-    <h1 class="bgskill">Skills</h1>
-    <div class="circle4"></div>
-    <div class="circle5"></div>
-  </section>
-  <section id="contact">
-    <h1 class="title">Contact</h1>
-    <div class="cards">
-      <div class="card">
-        <ion-icon name="call-outline"></ion-icon>
-        <h3>Téléphone</h3>
-        <a href="tel:+243980166216">+243980166216</a>
-      </div>
-      <div class="card">
-        <ion-icon name="mail-outline"></ion-icon>
-        <h3>Email</h3>
-        <a href="mailto: ndjokodylan8@gmail.com">ndjokodylan8@gmail.com</a>
-      </div>
-    </div>
-  </section>
-  <script src="script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https: // unpkg .com / ionicons @ 5.5.2 / dist / ionicons / ionicons.js"></script>
-</body>
 
+  <!-- NAVBAR FIXE -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Dydy Dev</a>
+      <ul class="nav-menu">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#tools">Outils & IA</a></li>
+        <li><a href="#testimonials">Témoignages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            <span class="typewriter" data-text="Bonjour, je suis Dylan|Développeur web"></span>
+          </h1>
+          <p class="hero-subtitle">Je crée des expériences web performantes, modernes et intuitives.</p>
+          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ABOUT ME -->
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-right">
+        <h2>À propos de moi</h2>
+        <p>
+          Développeur web full-stack passionné, je conçois des solutions web performantes et intuitives, du front au back, avec un souci constant du détail et de l’expérience utilisateur.
+        </p>
+        <ul class="about-list">
+          <li><strong>Localisation :</strong> Kinshasa, RDC</li>
+          <li><strong>Langues :</strong> Français</li>
+          <li><strong>Outils préférés :</strong> VS Code, GitHub, Supabase, Firebase</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS DYNAMIQUES -->
+    <section id="projects" class="projects section">
+      <div class="container">
+        <h2 data-aos="fade-up">Projets</h2>
+        <div class="filters" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+        <div class="project-grid">
+          <!-- Card exemple -->
+          <article class="project-card" data-category="mobile" data-aos="fade-up">
+            <img src="assets/tata-leo.jpeg"
+                 alt="Vitrine Produits Agroalimentaires (jus, yaourts, compléments)"
+                 class="project-img">
+          
+            <div class="card-content">
+              <h3>Vitrine Produits Agroalimentaires</h3>
+              <p>
+                Site dynamique pour présenter des jus naturels, yaourts et compléments.
+                Intègre un module de témoignages clients et un blog santé.
+              </p>
+              <div class="project-links">
+                <a href="https://dydy45.github.io/Tata-Leo/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Voir le site">
+                  Voir le site
+                </a>
+                <!--<a href="https://github.com/tonprofil/agro-site"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Voir le code source">
+                  Code source
+                </a>-->
+              </div>
+            </div>
+          </article>
+          
+          <article class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/chris-traiteur.jpeg"
+                 alt="Vitrine Service Traiteur"
+                 class="project-img">
+          
+            <div class="card-content">
+              <h3>Chris-Traiteur</h3>
+              <p>
+                Site dynamique pour présenter des services traiteurs.
+                Intègre un formulaire de contact et un système réservation.
+              </p>
+              <div class="project-links">
+                <a href="https://dydy45.github.io/Chris-Traiteur/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Voir le site">
+                  Voir le site
+                </a>
+                <!--<a href="https://github.com/tonprofil/agro-site"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Voir le code source">
+                  Code source
+                </a>-->
+              </div>
+            </div>
+          </article>
+          <!-- Répéter pour chaque projet, adapter data-category -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills section">
+      <div class="container">
+        <h2 data-aos="fade-up">Compétences</h2>
+        <div class="skills-grid">
+          <div class="skill" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" width="40">
+            <div class="progress-bar"><div style="width:95%"></div></div>
+            <span>HTML5 (95%)</span>
+          </div>
+          
+          <div class="skill" data-aos="fade-up" data-aos-delay="200">
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="40"><title>CSS</title><path fill="#1572B6" d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg>
+            <div class="progress-bar"><div style="width:75%"></div></div>
+            <span>CSS3 (75%)</span>
+          </div>
+          
+          <div class="skill" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" width="40">
+            <div class="progress-bar"><div style="width:65%"></div></div>
+            <span>JavaScript (65%)</span>
+          </div>
+          
+          <div class="skill" data-aos="fade-up" data-aos-delay="400">
+            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" width="40">
+            <div class="progress-bar"><div style="width:50%"></div></div>
+            <span>React (50%)</span>
+          </div>
+          <!-- Répéter pour CSS3, JS, React, etc. -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- OUTILS & IA -->
+    <section id="tools" class="skills section">
+      <div class="container">
+        <h2 data-aos="fade-up">Outils & IA</h2>
+        <div class="skills-grid">
+          
+          <div class="skill" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://cdn.simpleicons.org/openai/FFFFFF" alt="ChatGPT" width="40">
+            <div class="progress-bar"><div style="width:85%"></div></div>
+            <span>ChatGPT (85%)</span>
+          </div>
+          
+          <div class="skill" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" width="40">
+            <div class="progress-bar"><div style="width:75%"></div></div>
+            <span>Supabase (75%)</span>
+          </div>
+    
+          <div class="skill" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/claude-color.svg" alt="Claude AI" width="40">
+            <div class="progress-bar"><div style="width:70%"></div></div>
+            <span>Claude AI (70%)</span>
+          </div>
+    
+          <div class="skill" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/deepseek-color.svg" alt="DeepSeek" width="40">
+            <div class="progress-bar"><div style="width:65%"></div></div>
+            <span>DeepSeek (65%)</span>
+          </div>
+    
+          <div class="skill" data-aos="fade-up" data-aos-delay="500">
+            <svg role="img" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" width="40">
+              <title>VS Code</title>
+              <g fill="#007ACC">
+                <polygon points="30,65 320,280 240,320 0,80"/>
+                <polygon points="30,255 320,40 240,0 0,240"/>
+                <polygon points="240,0 320,40 320,280 240,320"/>
+              </g>
+            </svg>
+            <div class="progress-bar"><div style="width:80%"></div></div>
+            <span>VS Code (80%)</span>
+          </div>
+    
+          <div class="skill" data-aos="fade-up" data-aos-delay="600">
+            <img
+              src="assets/githubcopilot.svg"
+              alt="GitHub Copilot"
+              width="40"
+              style="filter: brightness(0) invert(1);"
+            >
+            <div class="progress-bar">
+              <div style="width:75%"></div>
+            </div>
+            <span>GitHub Copilot (75%)</span>
+          </div>
+          
+    
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials section">
+      <div class="container">
+        <h2 data-aos="fade-up">Témoignages</h2>
+        <div class="testi-slider" data-aos="fade-up" data-aos-delay="100">
+          <blockquote>
+            <p>“Travailler avec Dylan a transformé notre site. Professionnel et réactif.”</p>
+            <cite>- Client A</cite>
+          </blockquote>
+          <!-- Ajouter d’autres témoignages -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+      <div class="container" data-aos="fade-up">
+        <h2>Contactez-moi</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Nom" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="E-mail" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Envoyer</button>
+        </form>
+        <!-- Message de retour -->
+        <div id="formMessage" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+        <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+          <a href="#" aria-label="LinkedIn">🔗</a>
+          <a href="#" aria-label="GitHub">🐙</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Dydy Dev. Mentions légales | Politique de confidentialité</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialisation d’EmailJS
+    emailjs.init('n_DTiH8tkR_m7eWUP'); // remplace par ta public key
+  </script>
+  <script src="script.js"></script>
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Récupération des données
+      const formData = new FormData(contactForm);
+      const params = {
+        name: name, // correspond à {{name}}
+        email: email, // correspond à {{email}}
+        message: message // correspond à {{message}}
+      };
+      // Envoi via EmailJS
+      emailjs.send('service_5n8qtci', 'template_pflmbe5', params)
+        .then(() => {
+          alert("✉️ Message envoyé avec succès !");
+          contactForm.reset();
+        }, (error) => {
+          console.error('Erreur lors de l’envoi :', error);
+          alert("❌ Une erreur s'est produite. Veuillez réessayer.");
+        });
+    });
+  </script>
+  
+</body>
 </html>
