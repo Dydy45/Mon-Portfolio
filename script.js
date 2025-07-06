@@ -1,106 +1,90 @@
-const menubtn = document.querySelector('.menu')
-menu = document.querySelector('header ul')
-up = document.querySelector('.up')
+// Initialiser AOS (scroll animations)
+AOS.init({
+  duration: 800,
+  once: true
+});
 
-menubtn.onclick = function() {
-  if (!menu.classList.contains('open')) {
-    menu.classList.add('open')
-    menubtn.style.transform = 'rotate(180deg)'
-    menubtn.classList.remove('uil-bars')
-    menubtn.classList.add('uil-times')
-  } else {
-    menu.classList.remove('open')
-    menubtn.style.transform = 'rotate(0deg)'
-    menubtn.classList.add('uil-bars')
-    menubtn.classList.remove('uil-times')
+// Toggle menu mobile
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.querySelector('.nav-menu');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+// Filtrer les projets
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Activer le bouton
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    
+    // Afficher / masquer les cartes
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'block';
+        // Réappliquer l'animation AOS
+        card.setAttribute('data-aos', 'fade-up');
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Formulaire simple
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  alert('Merci ! Votre message a été envoyé.');
+  e.target.reset();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector(".typewriter");
+  const texts = el.getAttribute("data-text").split("|");
+  let textIndex = 0;
+  let charIndex = 0;
+  let currentText = '';
+  let isDeleting = false;
+  
+  function type() {
+    const fullText = texts[textIndex];
+    
+    // Construire le texte en cours
+    if (isDeleting) {
+      currentText = fullText.substring(0, charIndex--);
+    } else {
+      currentText = fullText.substring(0, charIndex++);
+    }
+    
+    el.textContent = currentText;
+    
+    // === Fin d'écriture du texte actuel ===
+    if (!isDeleting && charIndex === fullText.length) {
+      // Si c’est le dernier texte, on arrête tout ici, après affichage complet
+      if (textIndex === texts.length - 1) {
+        // On force l'affichage complet
+        el.textContent = fullText;
+        return;
+      }
+      
+      // Sinon, on déclenche la suppression après un délai
+      setTimeout(() => isDeleting = true, 1000);
+    }
+    
+    // === Fin d'effacement ===
+    else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex++;
+    }
+    
+    // Vitesse dynamique
+    const typingSpeed = isDeleting ? 40 : 80;
+    setTimeout(type, typingSpeed);
   }
-}
-
-window.addEventListener('scroll', () => {
-  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-    up.style.display = "block"
-  } else {
-    up.style.display = "none"
-  }
-  if (menu.classList.contains('open')) {
-    menu.classList.remove('open')
-    menubtn.style.transform = 'rotate(0deg)'
-    menubtn.classList.add('uil-bars')
-    menubtn.classList.remove('uil-times')
-  }
-})
-
-up.addEventListener('click', () => {
-  document.body.scrollTop = 0
-  document.documentElement.scrollTop = 0
-})
-
-const nav1 = document.getElementById('nav1')
-nav2 = document.getElementById('nav2')
-nav3 = document.getElementById('nav3')
-nav4 = document.getElementById('nav4')
-
-
-
-nav1.onclick = function() {
-  menu.classList.remove('open')
-  menubtn.style.transform = 'rotate(0deg)'
-  menubtn.classList.add('uil-bars')
-  menubtn.classList.remove('uil-times')
-}
-nav2.onclick = function() {
-  menu.classList.remove('open')
-  menubtn.style.transform = 'rotate(0deg)'
-  menubtn.classList.add('uil-bars')
-  menubtn.classList.remove('uil-times')
-}
-nav3.onclick = function() {
-  menu.classList.remove('open')
-  menubtn.style.transform = 'rotate(0deg)'
-  menubtn.classList.add('uil-bars')
-  menubtn.classList.remove('uil-times')
-}
-nav4.onclick = function() {
-  menu.classList.remove('open')
-  menubtn.style.transform = 'rotate(0deg)'
-  menubtn.classList.add('uil-bars')
-  menubtn.classList.remove('uil-times')
-}
-
-
-const htmlbar = document.getElementById('bar1')
-cssbar = document.getElementById('bar2')
-jsbar = document.getElementById('bar3')
-
-window.addEventListener('scroll', () => {
-  if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
-    htmlbar.classList.add('activehtml')
-    cssbar.classList.add('activecss')
-    jsbar.classList.add('activejs')
-  }
-})
-
-const sw = document.querySelector('.switch')
-swcircle = document.querySelector('.switchcircle')
-
-sw.addEventListener('click', () => {
-  if (!swcircle.classList.contains('on')) {
-    swcircle.classList.add('on')
-    swcircle.innerHTML = `<ion-icon name="sunny-outline"></ion-icon>`
-    document.body.classList.add('dark')
-    menu.classList.remove('open')
-    menubtn.style.transform = 'rotate(0deg)'
-    menubtn.classList.add('uil-bars')
-    menubtn.classList.remove('uil-times')
-    sw.style.backgroundColor = '#1F2021'
-  } else {
-    swcircle.classList.remove('on')
-    swcircle.innerHTML = `<ion-icon name="moon-outline"></ion-icon>`
-    document.body.classList.remove('dark')
-    menu.classList.remove('open')
-    menubtn.style.transform = 'rotate(0deg)'
-    menubtn.classList.add('uil-bars')
-    menubtn.classList.remove('uil-times')
-    sw.style.backgroundColor = '#fff'
-  }
-})
+  
+  type();
+});
